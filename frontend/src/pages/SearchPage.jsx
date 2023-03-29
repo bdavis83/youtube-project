@@ -19,7 +19,7 @@ const SearchPage = () => {
     }, []);
 
     const handleClick = (video) => {
-        navigate (`/details/${user.id}`, {
+        navigate (`/details/${video.id}`, {
             state: {
                 name: video.name,
             }

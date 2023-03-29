@@ -15,6 +15,7 @@ import Footer from "./components/Footer/Footer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
+import VideoPage from "./pages/VideoPage/VideoPage";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/homepage" element={<PrivateRoute><HomePage /></PrivateRoute>}/>
+        <Route path="/video" element={<PrivateRoute><VideoPage /></PrivateRoute>}/>
       </Routes>
       <Footer />
     </div>
