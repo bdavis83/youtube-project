@@ -188,7 +188,7 @@ const HomePage = () => {
   
   async function fetchVideos () {
     try {
-      let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=acousticguitarlesson&key=AIzaSyD7bQoBgQwYItZFD-_1_F5APxb2R4lXkwg&part=snippet&type=video&maxResults=5`, )
+      let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=skiing&key=AIzaSyD7bQoBgQwYItZFD-_1_F5APxb2R4lXkwg&part=snippet&type=video&maxResults=5`, )
       console.log (response.data.items)
       setVideos(response.data.items)
     } catch (error) {

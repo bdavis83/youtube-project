@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CommentForm from '../../components/CommentForm/CommentForm';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 
 const VideoPage = (props) => {
@@ -10,7 +11,7 @@ const [videoId, setVideoId] = useState("8w_RUuGQf90")
                 <VideoPlayer videoId = {videoId}/>
             </div>
             <div>
-                comment form
+                <CommentForm videoId = {videoId}/>
             </div>
             <div>
                 comment mapper
