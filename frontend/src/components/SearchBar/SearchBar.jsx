@@ -13,7 +13,7 @@ const SearchBar = () => {
             navigate(`/search/${userInput}`);
 
             setUserInput('')
-        }
+        } 
     }
 
     return ( 
