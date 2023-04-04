@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import {KEY} from '../../localKey';
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
@@ -184,6 +185,7 @@ const HomePage = () => {
         }
     }
 ]);
+  const navigate = useNavigate()
   // const [videos, setVideos] = useState([]);
   
   async function fetchVideos () {
@@ -195,15 +197,15 @@ const HomePage = () => {
       console.log(error)
     }
     }
-    //   useEffect (()=>{
-    //   fetchVideos();
-    // }, []);
+      useEffect (()=>{
+      fetchVideos();
+    }, []);
 
   return (
     <div className="container">
       <h1>Home Page for {user.username}</h1>
       <div className="searchBar">
-        <SearchBar></SearchBar>
+        <SearchBar fetchVideos = {fetchVideos}></SearchBar>
       </div>
       <div className='body-container-grid'>
       {videos && videos.map((video)=>{
