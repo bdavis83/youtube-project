@@ -2,13 +2,13 @@ import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import {KEY} from '../../localKey';
-import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 
 
 import SearchBar from "../../components/SearchBar/SearchBar";
+import VideoCard from "../../components/VideoCard/VideoCard";
 
 const HomePage = () => {
 
@@ -29,7 +29,7 @@ const HomePage = () => {
     }
       useEffect (()=>{
         fetchVideos(`search?part=snippet&q=${videos}`).then((data)=> setVideos(data.items))
-    }, []);
+    }, [videos]);
 
   return (
     <div className="container">
@@ -37,9 +37,13 @@ const HomePage = () => {
       <div className="searchBar">
         <SearchBar fetchVideos = {fetchVideos}></SearchBar>
       </div>
+      <div>
+        <VideoPlayer videos={videos}/>
+      </div>
       <div className='body-container-grid'>
       {videos && videos.map((video)=>{
         return (
+        
           <li key={video.id.videoId}>{video.snippet.title}</li>
         )
       })}
