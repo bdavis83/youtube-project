@@ -35,7 +35,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/homepage" element={<PrivateRoute><HomePage /></PrivateRoute>}/>
         <Route path="/video" element={<PrivateRoute><VideoPage /></PrivateRoute>}/>
-        <Route path="/search/:searchTerm" element={<PrivateRoute><SearchPage /></PrivateRoute>}/>
+        <Route path="/search/" element={<PrivateRoute><SearchPage /></PrivateRoute>}/>
       </Routes>
       <Footer />
     </div>

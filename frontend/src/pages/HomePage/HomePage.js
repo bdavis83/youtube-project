@@ -29,16 +29,16 @@ const HomePage = () => {
     }
       useEffect (()=>{
         fetchVideos(`search?part=snippet&q=${videos}`).then((data)=> setVideos(data.items))
-    }, [videos]);
+    }, []);
 
   return (
     <div className="container">
       <h1>Home Page for {user.username}</h1>
       <div className="searchBar">
-        <SearchBar fetchVideos = {fetchVideos}></SearchBar>
+
       </div>
       <div>
-        <VideoPlayer videos={videos}/>
+    
       </div>
       <div className='body-container-grid'>
       {videos && videos.map((video)=>{

@@ -1,30 +1,25 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
 
 
-const SearchBar = () => {
-    const [userInput, setUserInput]= useState('')
-    const navigate = useNavigate()
+
+const SearchBar = (props) => {
+    const [search, setSearch] = useState('')
 
     function handleSubmit(event){
         event.preventDefault();
+        props.fetchVideos(search)
         
-        if (userInput){
-            navigate(`/search/${userInput}`);
-
-            setUserInput('')
-        } 
     }
 
     return ( 
-        <div>
-            <div className='searchbar-component' style={{maxWidth: '300px'}}>
+        
+            <div className='searchbar-component' >
                 <form onSubmit={handleSubmit}>
-            <input type='text' placeholder ='search' onChange = {(event)=>setUserInput(event.target.value)} value = {userInput}/>
-            <button className='search-button' type = "submit" onClick={handleSubmit}>Search</button>
-            </form>
+                    <input type='text' name='search'  value = {search} onChange = {(event)=>setSearch(event.target.value)}/>
+                        <button className='search-button' type = "submit" onClick={handleSubmit}>Search</button>
+                </form>
         </div>
-        </div>
+        
      );
 }
  
