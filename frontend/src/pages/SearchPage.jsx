@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { DATA } from '../src/../localData.js'
 
 import SearchBar from '../components/SearchBar/SearchBar';
 
@@ -15,7 +16,10 @@ const SearchPage = () => {
           console.log(error.message)
         }
         }
-        fetchVideos();
+        ;
+     useEffect (()=>{
+        fetchVideos()
+        }, []);
 
     return ( 
         <div>
@@ -24,7 +28,15 @@ const SearchPage = () => {
             <ul>
                 {video && video.map((video)=> {
                     return (
-                        <li key={video.id}>{video.thumbnails}</li>
+                        <li key={video.id.videoId}>
+                            <div>
+                               <a><img src={video.snippet.thumbnails.default.url} alt=""/></a> 
+                            </div>
+                            <p>{video.snippet.title} </p>
+                            <p>{video.snippet.description}</p>
+
+                        </li>
+                            
                     )
                 })}
             </ul>

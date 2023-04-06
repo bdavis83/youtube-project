@@ -1,3 +1,5 @@
+export const DATA = [
+
 {
         "kind": "youtube#searchResult",
         "etag": "qsr7m8n9_Exu2XqcELMziicedVQ",
@@ -167,4 +169,4 @@
             "liveBroadcastContent": "none",
             "publishTime": "2023-03-14T15:00:39Z"
         }
-    }
+    }]
