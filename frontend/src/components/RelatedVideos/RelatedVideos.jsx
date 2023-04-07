@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router';
 
 
-const RelatedVideos = () => {
+
+const RelatedVideos = (props) => {
 
     const [relVideos, setRelVideos] = useState([]);
-    const url = `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${video.id.videoId}&type=video&maxResults=5&key=AIzaSyD7bQoBgQwYItZFD-_1_F5APxb2R4lXkwg.&part=snippet`
+    const url = `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.videoId}&key=AIzaSyD7bQoBgQwYItZFD-_1_F5APxb2R4lXkwg&part=snippet&type=video&maxResults=5`
 
     
-        async function fetchRelatedVideos (searchTerm = {}) {
+        async function fetchRelatedVideos () {
             try {
               let response = await axios.get(url)
               console.log (response.data.items)
@@ -18,12 +21,27 @@ const RelatedVideos = () => {
             }
             }
               useEffect (()=>{
-                fetchRelatedVideos(`search?part=snippet&q=${video}`).then((data)=> setRelVideos(data.items))
-            }, []);
+                fetchRelatedVideos()
+            }, [props.videoId]);
     
     return ( 
         <div className='related-videos'>
             <h3>Related Videos</h3>
+            <ul>
+                {relVideos && relVideos.map((relVideos)=> {
+                    return (
+                        <li key={relVideos.id.videoId}>
+                            <div>
+                               <Link to={`/video/${relVideos.id.videoId}`}> <img src={relVideos.snippet.thumbnails.default.url} alt=""/></Link>
+                            </div>
+                            <p>{relVideos.snippet.title} </p>
+                            <p>{relVideos.snippet.description}</p>
+
+                        </li>
+                            
+                    )
+                })}
+            </ul>
         </div>
      );
 }
