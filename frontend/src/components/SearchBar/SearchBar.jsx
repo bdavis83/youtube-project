@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Button } from '@mui/material';
+import './SearchBar.css'
 
 
 
@@ -15,8 +17,10 @@ const SearchBar = (props) => {
         
             <div className='searchbar-component' >
                 <form onSubmit={handleSubmit}>
-                    <input type='text' name='search'  value = {search} onChange = {(event)=>setSearch(event.target.value)}/>
-                        <button className='search-button' type = "submit" onClick={handleSubmit}>Search</button>
+                    <input className='searchbar' type='text' name='search'  value = {search} onChange = {(event)=>setSearch(event.target.value)}/>
+
+                        <Button className='search-button' type = "submit" onClick={handleSubmit}variant="contained">Search</Button>
+
                 </form>
         </div>
         

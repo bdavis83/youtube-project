@@ -1,0 +1,22 @@
+.searchbar-component{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbar{
+    display: flex;
+    box-sizing: border-box;
+    width: 350px;
+    border-style: solid;
+    display: inline-block;
+    margin: auto;
+    justify-content: center;
+    
+}
+.search-button{
+    height: 22px;
+    padding: 2S;
+    margin: .5em;
+}
