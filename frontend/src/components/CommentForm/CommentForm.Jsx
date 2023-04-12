@@ -22,7 +22,7 @@ const CommentForm = (props) => {
     debugger;
     try {
       let response = await axios.post(
-        `http://127.0.0.1:8000/api/comments/${props.videoId}`,
+        `http://127.0.0.1:8000/api/comments/`,
         newComment,
         {
           headers: {
@@ -30,6 +30,7 @@ const CommentForm = (props) => {
           },
         }
       );
+      console.log(newComment)
     } catch (error) {
       console.log(error.message);
     }

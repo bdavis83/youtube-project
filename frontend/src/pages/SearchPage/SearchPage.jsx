@@ -28,7 +28,7 @@ const SearchPage = (props) => {
 
     return ( 
         <div>
-            <SearchBar fetchVideos={props.fetchVideos}/>
+            <SearchBar fetchVideos={fetchVideos}/>
             <div className='wrapper'>
                 
         
