@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
-import useCustomForm from "../../hooks/useCustomForm";
+
 
 const CommentForm = (props) => {
   const [user, token] = useAuth();
@@ -22,7 +22,7 @@ const CommentForm = (props) => {
     debugger;
     try {
       let response = await axios.post(
-        "http://127.0.0.1:8000/api/comments/",
+        `http://127.0.0.1:8000/api/comments/${props.videoId}`,
         newComment,
         {
           headers: {

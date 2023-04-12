@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar';
+
 import CommentForm from '../../components/CommentForm/CommentForm';
 import DisplayComments from '../../components/DisplayComments/DisplayComments';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import RelatedVideos from '../../components/RelatedVideos/RelatedVideos';
 import { useParams } from 'react-router';
-import './VideoPage.css'
+import './VideoPage.css';
 
 
 const VideoPage = (props) => {
@@ -23,8 +24,8 @@ const VideoPage = (props) => {
 
             <div className='searchbar-wrapper'>
 
-                <SearchBar videoId={videoId}/>
-                <br></br>
+            <SearchBar fetchVideos={props.fetchVideos}/>
+                
 
             </div>
             <div className='videoplayer-wrapper'>

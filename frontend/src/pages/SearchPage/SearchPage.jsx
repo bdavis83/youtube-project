@@ -23,9 +23,12 @@ const SearchPage = (props) => {
         fetchVideos()
         }, []);
 
+        
+        
+
     return ( 
         <div>
-            <SearchBar fetchVideos={fetchVideos}/>
+            <SearchBar fetchVideos={props.fetchVideos}/>
             <div className='wrapper'>
                 
         
@@ -47,5 +50,6 @@ const SearchPage = (props) => {
             </div>
         </div>
 )}
- 
+
 export default SearchPage;
+

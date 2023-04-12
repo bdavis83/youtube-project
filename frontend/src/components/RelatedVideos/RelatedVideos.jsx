@@ -28,7 +28,7 @@ const RelatedVideos = (props) => {
     return ( 
         <div className='related-videos'>
             <h3>Related Videos</h3>
-            <ul>
+            <ul className='related-videos-list'>
                 {relVideos && relVideos.map((relVideos)=> {
                     return (
                       <div className='video-box'>

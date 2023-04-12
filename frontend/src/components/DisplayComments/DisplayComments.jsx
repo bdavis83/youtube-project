@@ -9,7 +9,7 @@ const DisplayComments = (props) => {
    
     async function fetchComments () {
         try {
-          let response = await axios.get(`http://127.0.0.1:8000/api/comments/`, 
+          let response = await axios.get(`http://127.0.0.1:8000/api/comments/${props.videoId}`, 
           {headers: {
             Authorization: 'Bearer ' + token,
             }})

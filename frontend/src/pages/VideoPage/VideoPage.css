@@ -1,7 +1,7 @@
 
 
 .videopage-wrapper {
-    display: flex;
+    display: flexbox;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -9,15 +9,6 @@
     
 }
 
-.searchbar-wrapper{
-    display:inline-flex;
-    flex-wrap: wrap;
-    margin-bottom: 25px;
-    
-}
-
-.videocards {
+.related-videos-wrapper{
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
 }
