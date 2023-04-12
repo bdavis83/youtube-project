@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
+import './RelatedVideos.css'
 
 
 
@@ -30,15 +31,23 @@ const RelatedVideos = (props) => {
             <ul>
                 {relVideos && relVideos.map((relVideos)=> {
                     return (
+                      <div className='video-box'>
                         <li key={relVideos.id.videoId}>
                             <div>
-                               <Link to={`/video/${relVideos.id.videoId}`}> <img src={relVideos.snippet.thumbnails.default.url} alt=""/></Link>
+                               <Link to={`/video/${relVideos.id.videoId}`}> <img src={relVideos.snippet.thumbnails.medium.url} alt=""/></Link>
                             </div>
-                            <p>{relVideos.snippet.title} </p>
-                            <p>{relVideos.snippet.description}</p>
+                            <div className='title'>
+                              <h5>{relVideos.snippet.title} </h5>
+                            </div>
+                            <div className='description-box'>
+                              <div className='description'>
+                               <p>{relVideos.snippet.description.substr(0,20)}</p>
+                            </div>
+                            </div>
+                            
 
                         </li>
-                            
+                      </div>
                     )
                 })}
             </ul>

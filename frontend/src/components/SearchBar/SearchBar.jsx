@@ -14,7 +14,7 @@ const SearchBar = (props) => {
     }
 
     return ( 
-        
+        <div className='search-bar-wrapper'>
             <div className='searchbar-component' >
                 <form onSubmit={handleSubmit}>
                     <input className='searchbar' type='text' name='search'  value = {search} onChange = {(event)=>setSearch(event.target.value)}/>
@@ -22,6 +22,7 @@ const SearchBar = (props) => {
                         <Button className='search-button' type = "submit" onClick={handleSubmit}variant="contained">Search</Button>
 
                 </form>
+            </div>
         </div>
         
      );

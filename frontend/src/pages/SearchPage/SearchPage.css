@@ -1,0 +1,19 @@
+.wrapper {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 20% 20% 20%;
+
+
+}
+
+
+
+.video-list{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+

@@ -1,0 +1,25 @@
+.video-box{
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    column-gap: 5px;
+    justify-content: space-around;
+    margin: 2rem;
+}
+
+.title{
+    font-size: 14;
+    font-weight: bold;
+    width: 330px;
+}
+
+.description-box{
+justify-self: center;
+width: 200px;
+}
+
+.description {
+    font-size: 8;
+    font-weight: lighter;
+    width: 200px;
+}
